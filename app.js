@@ -1,5 +1,16 @@
-let cash = 70
-let price = 40
-let storeOpen = false
+for (let i = 1; i <= 20 ; i++) {
+    console.log(i)
 
-storeOpen && cash >= price ? console.log('print receipt') : console.log('go home')
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log(i + '---> Frontend Simplfied')
+    }
+
+    else if (i % 3 == 0) {
+        console.log(i +" ---> Frontend")
+    }
+    else if (i % 5 == 0) {
+        console.log(i + '---> Simplfied')
+    }
+
+    
+}
