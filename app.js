@@ -1,6 +1,6 @@
-function CtoF (temp) {
-    return  temp * 1.8 + 32
-   
-}
+let arr = [20, 30, 40, 50, 100]
 
-console.log(CtoF(10))
+let newArr = arr.filter ((element) => {
+    console.log(element)
+    return true
+})
