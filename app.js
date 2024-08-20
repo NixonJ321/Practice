@@ -1,5 +1,7 @@
-let arr = ["A", "A+", "FAIL","B-", "C+", "FAIL",]
+let user = {
+  username: "nixon",
+  email: "nixon@gmail.com",
+  subStatus: "VIP",
+};
 
-let newArr = arr.filter (element => element !== "FAIL" )
-
-console.log(newArr) 
+console.log(user.username);
