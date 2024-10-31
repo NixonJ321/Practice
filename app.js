@@ -1,74 +1,74 @@
-function getMax (arr) {
-let max = arr[0]
-for (let i = 0; i < arr.length; ++i) {
-    if (max < arr[i]) {
-        max = arr[i]
-    }
-}
-return max
+function reserveString(str) {
+    return str.split('').reverse().join('')
 }
 
-console.log(getMax([-300,-100,200]))
-
-function calcTime(num) {
-    let min = Math.floor(num / 60)
-    let sec = num % 60
-    if (min < 10) {
-        min = '0' + min
+console.log(reserveString('Bingo was his Name Oh!'))
+function reserveString(str) {
+    let backwardsString = ''
+    for (let i = 0; i < str.length; ++i) {
+        backwardsString = str[i] + backwardsString
     }
-    if (sec < 10) {
-        sec = '0' + sec
-    }
-
-    return min + ":" + sec
+    return backwardsString
 }
 
-console.log(calcTime(50))
+console.log(reserveString('Bingo was his Name Oh!'))
 
-function addtionButHarder(num) {
-    let sum = 0
-    for (let i = 0; i < num + 1; ++i) {
-        sum = sum + i
+function boolValve(arr) {
+    return arr.map(elem => !!elem)
     }
-    return sum
-}
+    
+    console.log(boolValve([1,0,null,'sad',[],false,undefined,'']))
+    
+    function filterFalsey(arr) {
+        return arr.filter(elem => !!elem == true)
+     
+     }
+     
+     console.log(filterFalsey([1,0,[],NaN,null,undefined,'happy',true]))
+     
+     function filterApples(arr) {
+         return arr.filter(elem => elem !== 'apples')
+     
+     }
+     
+     console.log(filterApples(['apples','john','apples','oranges']))
+     
+     function filterApples(arr) {
+         let filteredArr = []
+         for ( let i = 0; i < arr.length; ++i) {
+             if (arr[i] !== 'apples') {
+                 filteredArr.push(arr[i])
+             }
+             
+         }
+         return filteredArr
+     }
+     
+     console.log(filterApples(['apples','coke',"apples","steak"]))
+     
+     
+     function reverseString(str) {
+         return str.split('').reverse().join('')
+     }
+     
+     console.log(reverseString('Hypothesis'))
+     
+     function Zeros(arr) {
+         for (let i = 0; i < arr.length; ++i) {
+           arr[i] = 0
+         }
+         return arr
+     }
+     
+     console.log(Zeros([1,2,3]))
+     
+     function reversed(str) {
+         let reversedString = ''
+         for ( let i = 0; i < str.length; ++i) {
+             reversedString = str[i] + reversedString
+         }
+         return reversedString
+     }
+     
+     console.log(reversed('Nixon'))
 
-console.log(addtionButHarder(494908))
-
-function addtion(arr) {
-    let sum = 0
-    for (let i = 0; i < arr.length; ++i) {
-        sum = sum + arr[i]
-    }
-    return sum
-}
-
-console.log(addtion([100,200,500]))
-
-function tryIng(arr) {
-    return arr[arr.length - 1]
-    }
-    
-    console.log(tryIng([2,3,1,'poo']))
-    
-    function lastElem(arr) {
-        let sum = -1
-        for (let i = 0; i < arr.length; ++i) {
-            sum = sum + 1
-        }
-        return arr[sum]
-    }
-    
-    console.log(lastElem([1,,'boo',1,1000]))
-    
-    function fuckYou(arr) {
-        return arr.length
-    }
-    
-    console.log(fuckYou([1,2,3,4]))
-    
-    function filterfalsey(elem1,elem2) {
-        return elem1 = !!elem1 == false ? elem1 : elem2
-    }
-    
-    console.log(filterfalsey(10,500))
