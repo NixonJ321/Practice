@@ -1,49 +1,57 @@
-function sortObjects(arr) {
-    let sortedObjects = arr.sort((a, b) => a.price-b.price)
-    return sortedObjects
-    } 
-    
-    console.log(sortObjects
-        ([
-            {id:1, price: 50},
-            {id:2, price: 0},
-            {id:3, price: 500},
-        ])
-    )
+function sortObjects (arr) {
 
-    function sortObjects(arr) {
-        let sortedObjects = arr.sort(({price:a}, {price: b}) => a-b)
-        return sortedObjects
-        } 
-        
-        console.log(sortObjects
-            ([
-                {id:1, price: 50},
-                {id:2, price: 0},
-                {id:3, price: 500},
-            ])
-        )
+    return arr.sort((a, b) => a.price - b.price)
+}
+
+console.log(sortObjects([
+    {id:1, price:50},
+    {id:2, price:30},
+    {id:3, price:60},
+    {id:4, price:10},
+    {id:5, price:20},
+]))
+
+function sortHtoL(arr) {
+    return arr.sort((a, b) => a - b)
     
-    function sortHtoL(numbers) {
-        numbers.sort((a, b) => a - b)
-        return numbers
-    }
-    
-    console.log(sortHtoL([3,-10000,756,2149312,2,100]))
-    
-    function ratingSys(rating) {
-        let ratings = ''
-        for (let i = 0; i < Math.floor(rating); ++i) {
-           ratings = ratings + '*'
-           if (i !== Math.floor(rating) - 1) {
-            ratings = ratings + ' '
-           }
+}
+
+console.log(sortHtoL([1,40,-1,-432,109,42,23,100]))
+
+function showRating(num) {
+    let ratings = ''
+    for (let i = 0; i < Math.floor(num); ++i) {
+        if(i !== (Math.floor(num) - 1)) {
+            ratings = ratings + '* '
         }
-           if (!Number.isInteger(rating)) {
-            ratings = ratings + ' .'
-           }
-        return ratings
+        else {
+            ratings = ratings + '*'
+        }
+    }
+    if(!Number.isInteger(num)) {
+        ratings = ratings + '.'
+    }
+
+    return ratings
+}
+    
+    
+    console.log(showRating(4))
+
+    function showRating(num) {
+        let rating = ''
+        for (let i = 0; i < Math.floor(num); ++i) {
+            if(i !== Math.floor(num) - 1) {
+                rating = rating + '* '
+            }
+            else {
+                rating = rating + '*'
+            }
+        }
+        if(!Number.isInteger(num)) {
+            rating = rating + '.'
+        }
+        return rating
     }
     
-    console.log(ratingSys(4.5))
-    
+    console.log(showRating(4.5))
