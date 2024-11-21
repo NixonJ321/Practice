@@ -1,21 +1,30 @@
-let emailRef = document.querySelector(".email");
-console.log(emailRef);
+const statusRef = document.querySelector(".sub__status");
 
-fetch("https://jsonplaceholder.typicode.com/users/1")
-  .then((response) => {
-    return response.json();
+function getSubStatus() {
+  return new Promise((resolve, reject) => {
+    resolve('FREE')
   })
-  .then((data) => {
-    console.log(data);
-  });
+}
 
-  const emailRef = document.querySelector('.email')
+
+
+function getVideo(subStatus) {
+  return new Promise((resolve, reject) => {
+    if (subStatus === "VIP") {
+      resolve("show video");
+    }
+    if (subStatus === 'FREE') {
+      resolve('Get out of here you broke MF')
+    }
+
+    else{ resolve('please subscribe')}
+  });
+}
 
 async function main() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
-    const data = await response.json()
-    console.log(data)
-    emailRef.innerHTML = data.email
-} 
+  const status = await getSubStatus();
+  statusRef.innerHTML = status;
+ console.log( await getVideo(status))
+}
 
 main()
