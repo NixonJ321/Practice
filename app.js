@@ -1,30 +1,9 @@
-const statusRef = document.querySelector(".sub__status");
+async function postsByUser(completed) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const result = await promise.json();
 
-function getSubStatus() {
-  return new Promise((resolve, reject) => {
-    resolve('FREE')
-  })
+   const filteredUserId = result.filter((element) => element.completed === completed).slice(0,6)
+   console.log(filteredUserId)
 }
 
-
-
-function getVideo(subStatus) {
-  return new Promise((resolve, reject) => {
-    if (subStatus === "VIP") {
-      resolve("show video");
-    }
-    if (subStatus === 'FREE') {
-      resolve('Get out of here you broke MF')
-    }
-
-    else{ resolve('please subscribe')}
-  });
-}
-
-async function main() {
-  const status = await getSubStatus();
-  statusRef.innerHTML = status;
- console.log( await getVideo(status))
-}
-
-main()
+postsByUser(false);
